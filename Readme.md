@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Сергей Чугаев](https://up.htmlacademy.ru/htmlcss/30/user/1046285).
-* Наставник: `Неизвестно`.
+* Наставник: [Руслан Бреев](https://htmlacademy.ru/profile/blckwltz).
 
 ---
 
