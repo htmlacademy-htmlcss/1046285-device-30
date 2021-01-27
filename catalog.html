@@ -50,33 +50,29 @@
           <li><a href="#">Каталог товаров</a></li>
           <li><a>Моноподы для селфи</a></li>
         </ul>
-        <fieldset>
-          <legend>Сортировка:</legend>
+        <section>
+          <h2>Сортировка:</h2>
           <ul>
             <li>
-              <label for="sort-by-price">По цене</label>
-              <input type="radio" id="sort-by-price" name="sort">
+              <a href="#">По цене</a>
             </li>
             <li>
-              <label for="sort-by-type">По типу</label>
-              <input type="radio" id="sort-by-type" name="sort">
+              <a href="#">По типу</a>
             </li>
             <li>
-              <label for="sort-by-popularity">По популярности</label>
-              <input type="radio" id="sort-by-popularity" name="sort">
+              <a href="#">По популярности</a>
             </li>
           </ul>
           <ul>
+            <!--Направление сортировки-->
             <li>
-              <label for="direction-up"></label>
-              <input type="radio" id="direction-up" name="direction">
+              <a href="#"></a>
             </li>
             <li>
-              <label for="direction-down"></label>
-              <input type="radio" id="direction-down" name="direction">
+              <a href="#"></a>
             </li>
           </ul>
-        </fieldset>
+        </section>
         <section>
           <h2>Фильтр товаров</h2>
           <form action="https://echo.htmlacademy.ru/" method="GET" name="filter-form" oninput="lowerPriceOutput.value = lowerPriseRange.value; highPriceOutput.value = highPriceRange.value">
