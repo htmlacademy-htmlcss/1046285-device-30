@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Селфи-палки</title>
+    <link rel="icon" href="logo_device@32x32.ico">
+    <link rel="icon" href="img/favicons/logo_device.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/logo_device@apple.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <base href="https://htmlacademy-htmlcss.github.io/1046285-device-30/4/">
+</head>
+  <body>
+    <header>
+      <nav>
+          <a href="index.html">
+            <img src="img/logotypes/devicelogo_black.svg" width="164" height="35" alt="Device">
+          </a>
+          <ul>
+            <li>
+              <a href="#">Каталог товаров</a>
+              <ul>
+                <li><a href="#">Виртуальная реальность</a></li>
+                <li><a>Моноподы для селфи</a></li>
+                <li><a href="#">Экшн-камеры</a></li>
+                <li><a href="#">Фитнес-браслеты</a></li>
+                <li><a href="#">Умные часы</a></li>
+                <li><a href="#">Квадрокоптер</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Гарантия</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">Валентин петухов</a>
+              <a href="#">Выйти</a>
+            </li>
+            <li><a href="#">Сравнить</a></li>
+            <li><a href="#">Корзина</a></li>
+          </ul>
+        </nav>
+        <form name="search-form" method="get">
+          <input type="search" placeholder="Поиск по сайту">
+        </form>
+    </header>
+    <main>
+      <h1>Моноподы для селфи</h1>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="#">Каталог товаров</a></li>
+          <li><a>Моноподы для селфи</a></li>
+        </ul>
+        <section>
+          <h2>Сортировка:</h2>
+          <ul>
+            <li>
+              <a href="#">По цене</a>
+            </li>
+            <li>
+              <a href="#">По типу</a>
+            </li>
+            <li>
+              <a href="#">По популярности</a>
+            </li>
+          </ul>
+          <ul>
+            <!--Направление сортировки-->
+            <li>
+              <a href="#"></a>
+            </li>
+            <li>
+              <a href="#"></a>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Фильтр товаров</h2>
+          <form action="https://echo.htmlacademy.ru/" method="get" name="filter-form" oninput="lowerPriceOutput.value = lowerPriseRange.value; highPriceOutput.value = highPriceRange.value">
+            <fieldset>
+              <legend>Стоимость</legend>
+              <label for="lower-price-range"></label>
+              <input type="range" min="0" max="8000" value="0" step="100" name="lowerPriseRange" id="lower-price-range">
+              <output name="lowerPriceOutput" for="lower-price-range">0</output>
+              
+              <label for="high-price-range"></label>
+              <input type="range" min="0" max="8000" value="8000" step="100" name="highPriceRange" id="high-price-range">
+              <output name="highPriceOutput" for="high-price-range">0</output>
+            </fieldset>
+            <fieldset>
+              <legend>Цвет</legend>
+              <ul>
+                <li>
+                  <input type="checkbox" name="black" id="device-color-black" checked>
+                  <label for="device-color-black">Чёрный</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="white" id="device-color-white">
+                  <label for="device-color-white">Белый</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="blue" id="device-color-blue" checked>
+                  <label for="device-color-blue">Синий</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="red" id="device-color-red" checked>
+                  <label for="device-color-red">Красный</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="pink" id="device-color-pink">
+                  <label for="device-color-pink">Розовый</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend>Bluetooth</legend>
+              <ul>
+                <li>
+                  <input type="radio" name="bluetooth-availability" id="yes" value="bluetooth-yes">
+                  <label for="bluetooth-yes">Есть</label>
+                </li>
+                <li>
+                  <input type="radio" name="bluetooth-availability" id="no" value="bluetooth-no">
+                  <label for="bluetooth-no">Нет</label>
+                </li>
+              </ul>
+            </fieldset>
+            <input type="submit" value="Показать">
+          </form>
+        </section>
+        <section>
+          <h2>Товары</h2>
+          <article>
+            <h3>Любительская селфи-палка</h3>
+            <img src="img/catalog/amateur_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
+            <p>1100 руб.</p>
+            <button type="button">В корзину</button>
+            <button type="button">Добавить к сравнению</button>
+          </article>
+          <article>
+            <h3>Профессиональная<br> селфи-палка </h3>
+            <img src="img/catalog/professional_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
+            <p>1500 руб.</p>
+            <button type="button">В корзину</button>
+            <button type="button">Добавить к сравнению</button>
+          </article>
+          <article>
+            <h3>Непотопляемая<br> селфи-палка</h3>
+            <img src="img/catalog/unsinkable_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
+            <p>1500 руб.</p>
+            <button type="button">В корзину</button>
+            <button type="button">Добавить к сравнению</button>
+          </article>
+          <article>
+            <h3>Селфи-палка «Следуй за<br> мной»</h3>
+            <img src="img/catalog/followme_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
+            <p>1900 руб.</p>
+            <button type="button">В корзину</button>
+            <button type="button">Добавить к сравнению</button>
+          </article>
+        </section>
+        <ul>
+          <li><a href="#">Назад</a></li>
+          <li><a>1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">Вперед</a></li>
+        </ul>
+    </main>
+    <footer>
+      <div>
+        <a href="index.html">
+          <img src="img/logotypes/devicelogo_yellow.svg" width="163" height="35" alt="Device"/>
+        </a>
+        <address>г. Москва, ул. Строителей, 15</address>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Гарантия</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#"><img src="img/logotypes/facebook.svg" width="32" height="32" alt="facebook"></a>
+          </li>
+          <li>
+            <a href="#"><img src="img/logotypes/instagram.svg" width="32" height="32" alt="instagram"></a>
+          </li>
+          <li>
+            <a href="#"><img src="img/logotypes/twitter.svg" width="32" height="32" alt="twitter"></a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a href="#">Валентин петухов</a>
+            <a href="#">Выйти</a>
+          </li>
+          <li><a href="#">Сравнить</a></li>
+          <li><a href="#">Корзина</a></li>
+        </ul>
+        <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
+        <a href="https://htmlacademy.ru/intensive/htmlcss">
+          <img src="img/logotypes/html_academy.svg" width="163" height="35" alt="Device">
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
