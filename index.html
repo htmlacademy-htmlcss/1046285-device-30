@@ -12,10 +12,11 @@
   </head>
   <body class="page-body">
     <header class="main-header">
-      <nav class="main-header-navigation">
-          <a class="main-header__logo">
-            <img src="img/logotypes/devicelogo_black.svg" width="164px" height="35px" alt="Device">
-          </a>
+      <div class="wrapper wrapper-header">
+      <a class="main-header__logo">
+        <img src="img/logotypes/devicelogo_black.svg" width="164px" height="35px" alt="Device">
+      </a>
+      <nav class="main-header__navigation">
           <ul class="navigation-list">
             <li class="navigation-list__item">
               <a class="navigation-catalog__title" href="#">Каталог товаров</a>
@@ -51,110 +52,115 @@
             <input class="main-header__search-button" type="submit" name="search-button" id="search-button" value="Найти">
           </div>
         </form>
+      </div>
     </header>
     <main>
+    <div class="wrapper">
       <h1 class="visually-hidden">Магазин гаджетов «Device»</h1>
       <section class="promo">
         <h2 class="visually-hidden">Промо блок</h2>
-        <!--Определение «Брендовый» в alt промо-слайдов, подразумевает наличие реального бренда
-          в реальном проекте.-->
-          <div class="slider-controls">
-            <input class="slider-controls__radio visually-hidden" type="radio" name="switch-slides" id="slide1" checked>
-            <label class="slider-controls__item" for="slide1"></label>
-            <input class="slider-controls__radio visually-hidden" type="radio" name="switch-slides" id="slide2">
-            <label class="slider-controls__item" for="slide2"></label>
-            <input class="slider-controls__radio visually-hidden" type="radio" name="switch-slides" id="slide3">
-            <label class="slider-controls__item" for="slide3"></label>
-          </div>
-        <article class="promo-slide">
+            <input class="slider-controls__radio slider__radio1 visually-hidden" type="radio" name="switch-slides" id="slide1" checked>
+            <label class="slider-controls__item slider__switch1" for="slide1"></label>
+            <input class="slider-controls__radio slider__radio2 visually-hidden" type="radio" name="switch-slides" id="slide2">
+            <label class="slider-controls__item slider__switch2" for="slide2"></label>
+            <input class="slider-controls__radio slider__radio3 visually-hidden" type="radio" name="switch-slides" id="slide3">
+            <label class="slider-controls__item slider__switch3" for="slide3"></label>
+        <article class="promo-slide slide1">
           <h3 class="visually-hidden">Восьмиметровая палка для селфи</h3>
           <img class="promo-slide__image" src="img/index/selfiestick_long.png" width="384" height="486" alt="«Брендовая» селфи-палка черного цвета ">
-          <p class="promo-slide__title">Делай селфи,<br> как Бен Стиллер!</p>
-          <p class="promo-slide__text">Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-          <table class="promo-slide__parameters">
-            <tr class="promo-slide__parameters-value">
-              <td>8,5 м</td>
-              <td>5 кг</td>
-              <td>Карбон</td>
-            </tr>
-            <tr class="promo-slide__parameters-title">
-              <th>Длина палки</th>
-              <th>Вес палки</th>
-              <th>Материал</th>
-            </tr>
-          </table>
+          <div class="container">
+            <p class="promo-slide__title">Делай селфи,<br> как Бен Стиллер!</p>
+            <p class="promo-slide__text">Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+            <table class="promo-slide__parameters">
+              <tr class="promo-slide__parameters-value">
+                <td>8,5 м</td>
+                <td>5 кг</td>
+                <td>Карбон</td>
+              </tr>
+              <tr class="promo-slide__parameters-title">
+                <th>Длина палки</th>
+                <th>Вес палки</th>
+                <th>Материал</th>
+              </tr>
+            </table>
             <a class="promo-slide__button button" href="#">Подробнее</a>
+          </div>
         </article>
-        <article class="promo-slide">
+        <article class="promo-slide slide2">
           <h3 class="visually-hidden">Мотивирующие фитнес-браслеты</h3>
           <img class="promo-slide__image" src="img/index/fitness_bracelet.png" width="345" height="485" alt="«Брендовый» фитнес-браслет черного цвета">
-          <p class="promo-slide__title">Худеем<br> правильно!</p>
-          <p class="promo-slide__text">Мотивирующие фитнес-браслеты помогут найти в себе силы<br> не пропускать занятия и соблюдать диету.</p>
-          <table class="promo-slide__parameters">
-            <tr class="promo-slide__parameters-value">
-              <td>48 часов</td>
-            </tr>
-            <tr class="promo-slide__parameters-title">
-              <th>Без подзарядки</th>
-            </tr>
-          </table>
-          <a class="promo-slide__button button" href="#">Подробнее</a>
+          <div class="container">
+            <p class="promo-slide__title">Худеем<br> правильно!</p>
+            <p class="promo-slide__text">Мотивирующие фитнес-браслеты помогут найти в себе силы<br> не пропускать занятия и соблюдать диету.</p>
+            <table class="promo-slide__parameters">
+              <tr class="promo-slide__parameters-value">
+                <td>48 часов</td>
+              </tr>
+              <tr class="promo-slide__parameters-title">
+                <th>Без подзарядки</th>
+              </tr>
+            </table>
+            <a class="promo-slide__button button" href="#">Подробнее</a>
+          </div>
         </article>
-        <article class="promo-slide">
+        <article class="promo-slide slide3">
           <h3 class="visually-hidden">Квадрокоптер оснащенный лазером</h3>
           <img class="promo-slide__image" src="img/index/quadcopter.png" width="526" height="334" alt="«Брендовый» квадрокоптер белого цвета">
-          <p class="promo-slide__title">Пархает как бабочка,<br> жалит как пчела!</p>
-          <p class="promo-slide__text">Этот обычный, на первый взгляд, квадрокоптер оснащен<br> мощным лазером, замаскированным под стандартную камеру.</p>
-          <table class="promo-slide__parameters">
-            <tr class="promo-slide__parameters-value">
-              <td>800 м</td>
-              <td>50 м</td>
-            </tr>
-            <tr class="promo-slide__parameters-title">
-              <th>Дальность полета</th>
-              <th>Радиус поражения</th>
-            </tr>
-          </table>
-          <a class="promo-slide__button button" href="#">Подробнее</a>
+        <div class="container">
+            <p class="promo-slide__title">Пархает как бабочка,<br> жалит как пчела!</p>
+            <p class="promo-slide__text">Этот обычный, на первый взгляд, квадрокоптер оснащен<br> мощным лазером, замаскированным под стандартную камеру.</p>
+            <table class="promo-slide__parameters">
+              <tr class="promo-slide__parameters-value">
+                <td>800 м</td>
+                <td>50 м</td>
+              </tr>
+              <tr class="promo-slide__parameters-title">
+                <th>Дальность полета</th>
+                <th>Радиус поражения</th>
+              </tr>
+            </table>
+            <a class="promo-slide__button button" href="#">Подробнее</a>
+          </div>
         </article>
       </section>
       <section class="popular-sections">
         <h2 class="visually-hidden">Популярные разделы каталога</h2>
         <ul class="popular-sections__list">
           <li class="popular-sections__list-item">
-            <a href="#">
+            <a class="popular-sections__link"2 href="#">
               <h3>Виртуальная<br> реальность</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
-            <a href="catalog.html">
+            <a class="popular-sections__link" href="catalog.html">
               <h3>Моноподы<br> для селфи</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
-            <a href="#">
+            <a class="popular-sections__link" href="#">
               <h3>Экшн-камеры</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
-            <a href="#">
+            <a class="popular-sections__link" href="#">
               <h3>Фитнес-браслеты</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
-            <a href="#">
+            <a class="popular-sections__link" href="#">
               <h3>Умные часы</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
-            <a href="#">
+            <a class="popular-sections__link" href="#">
               <h3>Квадрокоптеры</h3>
             </a>
           </li>
         </ul>
       </section>
+    </div>
       <section class="services">
-        <div class="wrapper">
+        <div class="wrapper services__wrapper">
           <h2 class="visually-hidden">Сервисы</h2>
           <input class="services__radio radio-delivery visually-hidden" type="radio" name="services" id="delivery" checked>
           <label class="services__button button" for="delivery">Доставка</label>
@@ -176,6 +182,7 @@
           </section>
       </section>
     </div>
+    <div class="wrapper">
       <section class="brands">
         <h2 class="visually-hidden">Бренды представленные в нашем магазине</h2>
         <ul class="brands__list">
@@ -193,6 +200,8 @@
           </li>
         </ul>
       </section>
+    </div>
+    <div class="wrapper info-wrapper">
       <section class="about">
         <h2 class="about__title">О нас</h2>
         <p class="about__text">Огромный выбор гаджетов не оставит равнодушным гика,<br> который есть в каждом из нас.</p>
@@ -210,8 +219,11 @@
         <img class="contacts__map" src="img/index/map.png" width="560" height="222" alt="г.Москва ул.Строителей д.15">
         <a class="contacts__button button" href="#">Напишите нам</a>
       </section>
+    </div>
     </main>
     <footer class="main-footer">
+
+    <div class="wrapper footer-wrapper">
       <div class="main-footer__left-section">
         <a class="main-footer__logo">
           <img src="img/logotypes/devicelogo_yellow.svg" width="163" height="35" alt="Device">
@@ -253,8 +265,10 @@
           <img src="img/logotypes/html_academy.svg" width="27" height="34" alt="Html academy">
         </a>
       </div>
+    </div>
+
     </footer>
-    <div class="feedback modal">
+    <div class="feedback modal visually-hidden">
       <form class="feedback__form" name="message-form" action="#" method="post">
         <label class="feedback__input-title" for="name">
           Ваше имя:
