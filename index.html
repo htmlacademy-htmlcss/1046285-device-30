@@ -59,13 +59,12 @@
       <h1 class="visually-hidden">Магазин гаджетов «Device»</h1>
       <section class="promo">
         <h2 class="visually-hidden">Промо блок</h2>
-            <input class="slider-controls__radio slider__radio1 visually-hidden" type="radio" name="switch-slides" id="slide1" checked>
-            <label class="slider-controls__item slider__switch1" for="slide1"></label>
-            <input class="slider-controls__radio slider__radio2 visually-hidden" type="radio" name="switch-slides" id="slide2">
-            <label class="slider-controls__item slider__switch2" for="slide2"></label>
-            <input class="slider-controls__radio slider__radio3 visually-hidden" type="radio" name="switch-slides" id="slide3">
-            <label class="slider-controls__item slider__switch3" for="slide3"></label>
-        <article class="promo-slide slide1">
+        <div class="slider-switches">
+          <button class="slider-switches__item first-switch slide-shown" id="first-switch"></button>
+          <button class="slider-switches__item second-switch" id="second-switch"></button>
+          <button class="slider-switches__item third-switch" id="third-switch"></button>
+        </div>
+        <article class="promo-slide" id="first-slide">
           <h3 class="visually-hidden">Восьмиметровая палка для селфи</h3>
           <img class="promo-slide__image" src="img/index/selfiestick_long.png" width="384" height="486" alt="«Брендовая» селфи-палка черного цвета ">
           <div class="container">
@@ -86,7 +85,7 @@
             <a class="promo-slide__button button" href="#">Подробнее</a>
           </div>
         </article>
-        <article class="promo-slide slide2">
+        <article class="promo-slide visually-hidden" id="second-slide">
           <h3 class="visually-hidden">Мотивирующие фитнес-браслеты</h3>
           <img class="promo-slide__image" src="img/index/fitness_bracelet.png" width="345" height="485" alt="«Брендовый» фитнес-браслет черного цвета">
           <div class="container">
@@ -103,7 +102,7 @@
             <a class="promo-slide__button button" href="#">Подробнее</a>
           </div>
         </article>
-        <article class="promo-slide slide3">
+        <article class="promo-slide visually-hidden" id="third-slide">
           <h3 class="visually-hidden">Квадрокоптер оснащенный лазером</h3>
           <img class="promo-slide__image" src="img/index/quadcopter.png" width="526" height="334" alt="«Брендовый» квадрокоптер белого цвета">
         <div class="container">
@@ -162,13 +161,12 @@
       <section class="services">
         <div class="wrapper services__wrapper">
           <h2 class="visually-hidden">Сервисы</h2>
-          <input class="services__radio radio-delivery visually-hidden" type="radio" name="services" id="delivery" checked>
-          <label class="services__button button" for="delivery">Доставка</label>
-          <input class="services__radio radio-warranty visually-hidden" type="radio" name="services" id="warranty">
-          <label class="services__button button" for="warranty">Гарантия</label>
-          <input class="services__radio radio-credit visually-hidden" type="radio" name="services" id="credit">
-          <label class="services__button button" for="credit">Кредит</label>
-          <section class="services__description services__delivery">
+          <div class="services-switches">
+            <button class="services-switches__item button first-services-switch switch-anabled" id="first-services-switch">Доставка</button>
+            <button class="services-switches__item button second-services-switch" id="second-services-switch">Гарантия</button>
+            <button class="services-switches__item button third-services-switch" id="third-services-switch">Кредит</button>
+          </div>
+          <section class="services__description services__delivery description-shown">
             <h3 class="services__description-title">Доставка</h3>
             <p class="services__description-text">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
           </section>
@@ -216,7 +214,9 @@
       <section class="contacts">
         <h2 class="contacts__title">Контакты</h2>
         <p class="contacts__text">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете<br> проверить работоспособность покупки. Всякое бывает.</p>
-        <img class="contacts__map" src="img/index/map.png" width="560" height="222" alt="г.Москва ул.Строителей д.15">
+        <a href="#">
+          <img class="contacts__map" src="img/index/map.png" width="560" height="222" alt="г.Москва ул.Строителей д.15">
+        </a>
         <a class="contacts__button button" href="#">Напишите нам</a>
       </section>
     </div>
