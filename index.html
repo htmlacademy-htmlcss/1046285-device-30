@@ -11,23 +11,23 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page-body">
-    <header class="main-header">
-      <div class="wrapper wrapper-header">
-      <a class="main-header__logo">
-        <img src="img/logotypes/devicelogo_black.svg" width="164px" height="35px" alt="Device">
-      </a>
-      <nav class="main-header__navigation">
+    <header class="main-header wrapper">
+      <div class="wrapper-header">
+        <a href="" class="main-header__logo catalog-logo disabled">
+          <img src="img/logotypes/devicelogo_black.svg" width="164" height="35" alt="Device">
+        </a>
+        <nav class="main-header__navigation">
           <ul class="navigation-list">
             <li class="navigation-list__item">
               <a class="navigation-catalog__title" href="#">Каталог товаров</a>
-              <ul class="navigation-catalog">
-                <li class="navigation-catalog__item"><a href="#">Виртуальная реальность</a></li>
-                <li class="navigation-catalog__item"><a href="catalog.html">Моноподы для селфи</a></li>
-                <li class="navigation-catalog__item"><a href="#">Экшн-камеры</a></li>
-                <li class="navigation-catalog__item"><a href="#">Фитнес-браслеты</a></li>
-                <li class="navigation-catalog__item"><a href="#">Умные часы</a></li>
-                <li class="navigation-catalog__item"><a href="#">Квадрокоптер</a></li>
-              </ul>
+                <ul class="navigation-catalog">
+                  <li class="navigation-catalog__item"><a href="#">Виртуальная реальность</a></li>
+                  <li class="navigation-catalog__item"><a href="catalog.html">Моноподы для селфи</a></li>
+                  <li class="navigation-catalog__item"><a href="#">Экшн-камеры</a></li>
+                  <li class="navigation-catalog__item"><a href="#">Фитнес-браслеты</a></li>
+                  <li class="navigation-catalog__item"><a href="#">Умные часы</a></li>
+                  <li class="navigation-catalog__item"><a href="#">Квадрокоптер</a></li>
+                </ul>
             </li>
             <li class="navigation-list__item"><a href="#">Доставка</a></li>
             <li class="navigation-list__item"><a href="#">Гарантия</a></li>
@@ -67,7 +67,7 @@
         <article class="promo-slide" id="first-slide">
           <h3 class="visually-hidden">Восьмиметровая палка для селфи</h3>
           <img class="promo-slide__image" src="img/index/selfiestick_long.png" width="384" height="486" alt="«Брендовая» селфи-палка черного цвета ">
-          <div class="container">
+          <div class="promo-container">
             <p class="promo-slide__title">Делай селфи,<br> как Бен Стиллер!</p>
             <p class="promo-slide__text">Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
             <table class="promo-slide__parameters">
@@ -84,11 +84,12 @@
             </table>
             <a class="promo-slide__button button" href="#">Подробнее</a>
           </div>
+          <span class="promo-slide__count">01</span>
         </article>
         <article class="promo-slide visually-hidden" id="second-slide">
           <h3 class="visually-hidden">Мотивирующие фитнес-браслеты</h3>
           <img class="promo-slide__image" src="img/index/fitness_bracelet.png" width="345" height="485" alt="«Брендовый» фитнес-браслет черного цвета">
-          <div class="container">
+          <div class="promo-container">
             <p class="promo-slide__title">Худеем<br> правильно!</p>
             <p class="promo-slide__text">Мотивирующие фитнес-браслеты помогут найти в себе силы<br> не пропускать занятия и соблюдать диету.</p>
             <table class="promo-slide__parameters">
@@ -101,11 +102,12 @@
             </table>
             <a class="promo-slide__button button" href="#">Подробнее</a>
           </div>
+          <span class="promo-slide__count">02</span>
         </article>
         <article class="promo-slide visually-hidden" id="third-slide">
           <h3 class="visually-hidden">Квадрокоптер оснащенный лазером</h3>
           <img class="promo-slide__image" src="img/index/quadcopter.png" width="526" height="334" alt="«Брендовый» квадрокоптер белого цвета">
-        <div class="container">
+          <div class="promo-container">
             <p class="promo-slide__title">Пархает как бабочка,<br> жалит как пчела!</p>
             <p class="promo-slide__text">Этот обычный, на первый взгляд, квадрокоптер оснащен<br> мощным лазером, замаскированным под стандартную камеру.</p>
             <table class="promo-slide__parameters">
@@ -120,6 +122,7 @@
             </table>
             <a class="promo-slide__button button" href="#">Подробнее</a>
           </div>
+          <span class="promo-slide__count">03</span>
         </article>
       </section>
       <section class="popular-sections">
@@ -222,10 +225,9 @@
     </div>
     </main>
     <footer class="main-footer">
-
     <div class="wrapper footer-wrapper">
       <div class="main-footer__left-section">
-        <a class="main-footer__logo">
+        <a class="main-footer__logo disabled">
           <img src="img/logotypes/devicelogo_yellow.svg" width="163" height="35" alt="Device">
         </a>
         <address class="main-footer__addres">г. Москва, ул. Строителей, 15</address>

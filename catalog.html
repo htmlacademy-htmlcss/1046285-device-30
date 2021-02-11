@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page-body">
-    <header class="main-header">
-      <div class="wrapper wrapper-header">
+  <div class="">
+    <header class="main-header wrapper">
+      <div class="wrapper-header">
         <a href="index.html" class="main-header__logo catalog-logo">
           <img src="img/logotypes/devicelogo_black.svg" width="164" height="35" alt="Device">
         </a>
@@ -20,14 +21,14 @@
           <ul class="navigation-list">
             <li class="navigation-list__item">
               <a class="navigation-catalog__title" href="#">Каталог товаров</a>
-              <ul class="navigation-catalog">
-                <li class="navigation-catalog__item"><a href="#">Виртуальная реальность</a></li>
-                <li class="navigation-catalog__item"><a>Моноподы для селфи</a></li>
-                <li class="navigation-catalog__item"><a href="#">Экшн-камеры</a></li>
-                <li class="navigation-catalog__item"><a href="#">Фитнес-браслеты</a></li>
-                <li class="navigation-catalog__item"><a href="#">Умные часы</a></li>
-                <li class="navigation-catalog__item"><a href="#">Квадрокоптер</a></li>
-              </ul>
+                <ul class="navigation-catalog">
+                  <li class="navigation-catalog__item"><a href="#">Виртуальная реальность</a></li>
+                  <li class="navigation-catalog__item"><a>Моноподы для селфи</a></li>
+                  <li class="navigation-catalog__item"><a href="#">Экшн-камеры</a></li>
+                  <li class="navigation-catalog__item"><a href="#">Фитнес-браслеты</a></li>
+                  <li class="navigation-catalog__item"><a href="#">Умные часы</a></li>
+                  <li class="navigation-catalog__item"><a href="#">Квадрокоптер</a></li>
+                </ul>
             </li>
             <li class="navigation-list__item"><a href="#">Доставка</a></li>
             <li class="navigation-list__item"><a href="#">Гарантия</a></li>
@@ -35,9 +36,9 @@
           </ul>
         </nav>
         <ul class="user-controls">
-          <li class="user-controls__item authorized">
-            <p>Валентин Петухов</p>
-            <a href="#">Выйти</a>
+          <li class="user-controls__item">
+            <p class="user-name">Валентин Петухов</p>
+            <a class="authorized" href="#">Выйти</a>
           </li>
           <li class="user-controls__item">
             <a href="#">Сравнить</a>
@@ -55,6 +56,7 @@
         </form>
       </div>
     </header>
+  </div>
     <main>
       <div class="wrapper">
         <h1 class="catalog-title">Моноподы для селфи</h1>
@@ -146,7 +148,7 @@
             <h3 class="product__title">Любительская селфи-палка</h3>
             <img class="product__preview" src="img/catalog/amateur_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
             <p class="product__price">1100 руб.</p>
-            <div class="container">
+            <div class="product__controls">
               <button class="product__busket-button button" type="button">В корзину</button>
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
             </div>
@@ -155,7 +157,7 @@
             <h3 class="product__title">Профессиональная<br> селфи-палка </h3>
             <img class="product__preview" src="img/catalog/professional_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
             <p class="product__price">1500 руб.</p>
-            <div class="container">
+            <div class="product__controls">
               <button class="product__busket-button button" type="button">В корзину</button>
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
             </div>
@@ -164,7 +166,7 @@
             <h3 class="product__title">Непотопляемая<br> селфи-палка</h3>
             <img class="product__preview" src="img/catalog/unsinkable_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
             <p class="product__price">1500 руб.</p>
-            <div class="container">
+            <div class="product__controls">
               <button class="product__busket-button button" type="button">В корзину</button>
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
             </div>
@@ -173,18 +175,18 @@
             <h3 class="product__title">Селфи-палка «Следуй за<br> мной»</h3>
             <img class="product__preview" src="img/catalog/followme_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
             <p class="product__price">1900 руб.</p>
-            <div class="container">
+            <div class="product__controls">
               <button class="product__busket-button button" type="button">В корзину</button>
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
             </div>
           </article>
         </section>
         <ul class="pagination">
-          <li class="pagination__button pagination__back pagination__button-disabled"><a>Назад</a></li>
-          <li class="pagination__page pagination__current-page"><a>1</a></li>
-          <li class="pagination__page"><a href="#">2</a></li>
-          <li class="pagination__page"><a href="#">3</a></li>
-          <li class="pagination__button pagination__forward"><a href="#">Вперед</a></li>
+          <li class="pagination__button pagination__back pagination__button-disabled"><a class="pagination__link">Назад</a></li>
+          <li class="pagination__page pagination__current-page"><a class="pagination__link">1</a></li>
+          <li class="pagination__page"><a class="pagination__link" href="#">2</a></li>
+          <li class="pagination__page"><a class="pagination__link" href="#">3</a></li>
+          <li class="pagination__button pagination__forward"><a class="pagination__link" href="#">Вперед</a></li>
         </ul>
       </div>
     </main>
@@ -217,8 +219,8 @@
         <div class="main-footer__right-section">
           <ul class="footer__user-controls user-controls">
             <li class="user-controls__item">
-              <p>Валентин Петухов</p>
-              <a href="#">Выйти</a>
+              <p class="user-name">Валентин Петухов</p>
+              <a class="authorized" href="#">Выйти</a>
             </li>
             <li class="user-controls__item">
               <a href="#">Сравнить</a>
