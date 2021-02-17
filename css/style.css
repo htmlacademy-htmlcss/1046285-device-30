@@ -348,13 +348,16 @@ a {
   margin-bottom: 60px;
 }
 
-.navigation-catalog:hover {
+.navigation-catalog:hover,
+.navigation-catalog:focus {
+  overflow: initial;
   height: 164px;
   opacity: 1;
   color: var(--basic-accent-color);
 }
 
-.navigation-catalog__title:hover ~ .navigation-catalog {
+.navigation-catalog__title:hover ~ .navigation-catalog,
+.navigation-catalog__title:focus ~ .navigation-catalog {
   overflow: initial;
   height: 164px;
   opacity: 1;

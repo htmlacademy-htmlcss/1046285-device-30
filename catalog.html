@@ -8,10 +8,9 @@
     <link rel="apple-touch-icon" href="img/favicons/logo_device@apple.png">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="page-body">
-  <div class="">
     <header class="main-header wrapper">
       <div class="wrapper-header">
         <a href="index.html" class="main-header__logo catalog-logo">
@@ -35,28 +34,30 @@
             <li class="navigation-list__item"><a href="#">Контакты</a></li>
           </ul>
         </nav>
-        <ul class="user-controls">
+        <ul class="user-controls authorized">
           <li class="user-controls__item">
-            <p class="user-name">Валентин Петухов</p>
-            <a class="authorized" href="#">Выйти</a>
+            <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
+          </li>
+          <li class="user-controls__item account-management">
+            <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
+            <a class="user-controls__exit" href="#">Выйти</a>
           </li>
           <li class="user-controls__item">
-            <a href="#">Сравнить</a>
+            <a class="user-controls__link user-controls__compare" href="#">Сравнить</a>
           </li>
           <li class="user-controls__item">
-            <a href="#">Корзина</a>
+            <a class="user-controls__link user-controls__basket" href="#">Корзина</a>
           </li>
         </ul>
-        <form class="main-header__search" action="" name="search-form" method="get">
+        <form class="main-header__search" action="https://echo.htmlacademy.ru/" name="search-form" method="get">
           <label  class="main-header__search-icon" for="search"></label>
           <input class="main-header__search-input" type="search" name="site-search" id="search" placeholder="Поиск по сайту">
-          <div class="container">
+          <div class="main-header__search-container">
             <input class="main-header__search-button" type="submit" name="search-button" id="search-button" value="Найти">
           </div>
         </form>
       </div>
     </header>
-  </div>
     <main>
       <div class="wrapper">
         <h1 class="catalog-title">Моноподы для селфи</h1>
@@ -91,15 +92,18 @@
         </section>
         <section class="filter">
           <h2 class="filter__title">Фильтр:</h2>
-          <form class="filter__form" action="https://echo.htmlacademy.ru/" method="get" name="filter-form" oninput="lowerPriceOutput.value = lowerPriseRange.value; highPriceOutput.value = highPriceRange.value">
+          <form class="filter__form" action="https://echo.htmlacademy.ru/" method="get" name="filter-form">
             <fieldset class="range-price">
               <legend class="range-price__title">Стоимость</legend>
-              <label class="range-price__controller lower-price" for="lowerPriseRange"></label>
-              <input class="range-price__input input-lower" type="range" min="0" max="8000" value="0" step="100" name="lower-price-range" id="lowerPriseRange">
-              <p class="range-price__output">от <output name="lowerPriceOutput" for="lower-price-range">0</output></p>
-              <label  class="range-price__controller high-price" for="highPriceRange"></label>
-              <input class="range-price__input input-higher" type="range" min="0" max="8000" value="8000" step="100" name="high-price-range" id="highPriceRange">
-              <p class="range-price__output">до <output name="highPriceOutput" for="high-price-range">0</output></p>
+              <div class="range-price__controls-scale">
+                <div class="range-price__controls-bar" style="width: 53%; margin-left: 0%;"></div>
+              </div>
+              <div class="range-price__toggle price-lower" tabindex="0">
+                <p class="value-price">от<span class="value-lower">0</span></p>
+              </div>
+              <div class="range-price__toggle price-higher" tabindex="0">
+                <p class="value-price">до<span class="value-higher">5000</span></p>
+              </div>
             </fieldset>
             <fieldset class="color-filter">
               <legend class="color-filter__title">Цвет</legend>
@@ -217,16 +221,19 @@
           </ul>
         </div>
         <div class="main-footer__right-section">
-          <ul class="footer__user-controls user-controls">
+          <ul class="user-controls footer__user-controls authorized">
             <li class="user-controls__item">
-              <p class="user-name">Валентин Петухов</p>
-              <a class="authorized" href="#">Выйти</a>
+              <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
+            </li>
+            <li class="user-controls__item account-management">
+              <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
+              <a class="user-controls__exit" href="#">Выйти</a>
             </li>
             <li class="user-controls__item">
-              <a href="#">Сравнить</a>
+              <a class="user-controls__link user-controls__compare" href="#">Сравнить</a>
             </li>
             <li class="user-controls__item">
-              <a href="#">Корзина</a>
+              <a class="user-controls__link user-controls__basket" href="#">Корзина</a>
             </li>
           </ul>
           <a class="contact-phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
@@ -251,10 +258,16 @@
           <textarea class="feedback__input feedback__textarea" name="message" id="message" placeholder="В свободной форме"></textarea>
         </label>
         <button class="feedback__button button" type="submit">Отправить</button>
-        <button class="feedback__close-button" type="button"></button>
+        <button class="feedback__close-button" type="button" aria-label="Закрыть форму обратной связи"></button>
       </form>
     </div>
-  </body>
-</html>
+    <div class="modal map">
+      <h2 class="visually-hidden">Как до нас добраться</h2>
+      <div class="map__container">
+        <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488780026!2d37.527429316404834!3d55.68703098053581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1613541564691!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <button class="map__close-button" type="button" aria-label="Закрыть карту"></button>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
