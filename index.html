@@ -34,21 +34,25 @@
             <li class="navigation-list__item"><a href="#">Контакты</a></li>
           </ul>
         </nav>
-          <ul class="user-controls">
-            <li class="user-controls__item">
-              <a href="#">Войти</a>
-            </li>
-            <li class="user-controls__item">
-              <a href="#">Сравнить</a>
-            </li>
-            <li class="user-controls__item">
-              <a href="#">Корзина</a>
-            </li>
-          </ul>
+        <ul class="user-controls">
+          <li class="user-controls__item">
+            <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
+          </li>
+          <li class="user-controls__item account-management">
+            <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
+            <a class="user-controls__exit" href="#">Выйти</a>
+          </li>
+          <li class="user-controls__item">
+            <a class="user-controls__link user-controls__compare" href="#">Сравнить</a>
+          </li>
+          <li class="user-controls__item">
+            <a class="user-controls__link user-controls__basket" href="#">Корзина</a>
+          </li>
+        </ul>
         <form class="main-header__search" action="" name="search-form" method="get">
           <label  class="main-header__search-icon" for="search"></label>
           <input class="main-header__search-input" type="search" name="site-search" id="search" placeholder="Поиск по сайту">
-          <div class="container">
+          <div class="main-header__search-container">
             <input class="main-header__search-button" type="submit" name="search-button" id="search-button" value="Найти">
           </div>
         </form>
@@ -59,12 +63,7 @@
       <h1 class="visually-hidden">Магазин гаджетов «Device»</h1>
       <section class="promo">
         <h2 class="visually-hidden">Промо блок</h2>
-        <div class="slider-switches">
-          <button class="slider-switches__item first-switch slide-shown" id="first-switch"></button>
-          <button class="slider-switches__item second-switch" id="second-switch"></button>
-          <button class="slider-switches__item third-switch" id="third-switch"></button>
-        </div>
-        <article class="promo-slide" id="first-slide">
+        <article class="promo-slide slide-current" id="first-slide">
           <h3 class="visually-hidden">Восьмиметровая палка для селфи</h3>
           <img class="promo-slide__image" src="img/index/selfiestick_long.png" width="384" height="486" alt="«Брендовая» селфи-палка черного цвета ">
           <div class="promo-container">
@@ -124,38 +123,43 @@
           </div>
           <span class="promo-slide__count">03</span>
         </article>
+        <div class="slider-switches">
+          <button class="slider-switches__item first-switch slider-switches__item-current id="first-switch"></button>
+          <button class="slider-switches__item second-switch" id="second-switch"></button>
+          <button class="slider-switches__item third-switch" id="third-switch"></button>
+        </div>
       </section>
       <section class="popular-sections">
         <h2 class="visually-hidden">Популярные разделы каталога</h2>
         <ul class="popular-sections__list">
           <li class="popular-sections__list-item">
             <a class="popular-sections__link"2 href="#">
-              <h3>Виртуальная<br> реальность</h3>
+              <h3 class="popular-sections__title">Виртуальная<br> реальность</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="catalog.html">
-              <h3>Моноподы<br> для селфи</h3>
+              <h3 class="popular-sections__title">Моноподы<br> для селфи</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
-              <h3>Экшн-камеры</h3>
+              <h3 class="popular-sections__title">Экшн-камеры</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
-              <h3>Фитнес-браслеты</h3>
+              <h3 class="popular-sections__title">Фитнес-браслеты</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
-              <h3>Умные часы</h3>
+              <h3 class="popular-sections__title">Умные часы</h3>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
-              <h3>Квадрокоптеры</h3>
+              <h3 class="popular-sections__title">Квадрокоптеры</h3>
             </a>
           </li>
         </ul>
@@ -251,15 +255,19 @@
         </ul>
       </div>
       <div class="main-footer__right-section">
-        <ul class="footer__user-controls user-controls">
+        <ul class="user-controls footer__user-controls">
           <li class="user-controls__item">
-            <a href="#">Войти</a>
+            <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
+          </li>
+          <li class="user-controls__item account-management">
+            <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
+            <a class="user-controls__exit" href="#">Выйти</a>
           </li>
           <li class="user-controls__item">
-            <a href="#">Сравнить</a>
+            <a class="user-controls__link user-controls__compare" href="#">Сравнить</a>
           </li>
           <li class="user-controls__item">
-            <a href="#">Корзина</a>
+            <a class="user-controls__link user-controls__basket" href="#">Корзина</a>
           </li>
         </ul>
         <a class="contact-phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
@@ -268,9 +276,9 @@
         </a>
       </div>
     </div>
-
     </footer>
-    <div class="feedback modal visually-hidden">
+    <div class="modal feedback">
+      <h2 class="visually-hidden">Напишите нам</h2>
       <form class="feedback__form" name="message-form" action="#" method="post">
         <label class="feedback__input-title" for="name">
           Ваше имя:
@@ -288,5 +296,13 @@
         <button class="feedback__close-button" type="button"></button>
       </form>
     </div>
+    <div class="modal map">
+      <h2 class="visually-hidden">Как до нас добраться</h2>
+      <div class="map__container">
+        <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488780026!2d37.527429316404834!3d55.68703098053581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1613541564691!5m2!1sru!2sru" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <button class="map__close-button" type="button"></button>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
