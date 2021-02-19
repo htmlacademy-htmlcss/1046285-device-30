@@ -9,8 +9,9 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.min.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
   </head>
-  <body class="page-body">
+  <body class="page-body  authorized">
     <header class="main-header wrapper">
       <div class="wrapper-header">
         <a href="index.html" class="main-header__logo catalog-logo">
@@ -34,9 +35,9 @@
             <li class="navigation-list__item"><a href="#">Контакты</a></li>
           </ul>
         </nav>
-        <ul class="user-controls authorized">
+        <ul class="user-controls">
           <li class="user-controls__item">
-            <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
+            <a class="user-controls__link user-controls__sign-in" href="#"  >Войти</a>
           </li>
           <li class="user-controls__item account-management">
             <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
@@ -72,21 +73,21 @@
           <h2 class="sort__title">Сортировка:</h2>
           <ul class="sort__type">
             <li class="sort__type-item sort__type-selected">
-              <a href="#">По цене</a>
+              <a href="#" aria-label="Сортировка по цене">По цене</a>
             </li>
             <li class="sort__type-item">
-              <a href="#">По типу</a>
+              <a href="#" aria-label="Сортировка по типу">По типу</a>
             </li>
             <li class="sort__type-item">
-              <a href="#">По популярности</a>
+              <a href="#" aria-label="Сортировка по популярности">По популярности</a>
             </li>
           </ul>
           <ul class="sort__direction">
             <li class="sort__direction-title">
-              <a class="sort__direction-icon" href="#"></a>
+              <a class="sort__direction-icon" href="#" aria-label="Направление сортировки по возрастанию"></a>
             </li>
             <li class="sort__direction-title">
-              <a class="sort__direction-icon" href="#"></a>
+              <a class="sort__direction-icon" href="#" aria-label="Направление сортировки по убыванию"></a>
             </li>
           </ul>
         </section>
@@ -110,23 +111,23 @@
               <ul class="color-filter__list">
                 <li class="color-filter__list-item">
                   <input class="color-input visually-hidden" type="checkbox" value="black" name="color" id="device-color-black" checked>
-                  <label class="color-label" for="device-color-black">Чёрный</label>
+                  <label class="color-label" for="device-color-black" tabindex="0">Чёрный</label>
                 </li>
                 <li class="color-filter__list-item">
                   <input class="color-input visually-hidden" type="checkbox" value="white" name="color" id="device-color-white">
-                  <label class="color-label" for="device-color-white">Белый</label>
+                  <label class="color-label" for="device-color-white" tabindex="0">Белый</label>
                 </li>
                 <li class="color-filter__list-item">
                   <input class="color-input visually-hidden" type="checkbox" value="blue" name="color" id="device-color-blue" checked>
-                  <label class="color-label" for="device-color-blue">Синий</label>
+                  <label class="color-label" for="device-color-blue" tabindex="0">Синий</label>
                 </li>
                 <li class="color-filter__list-item">
                   <input class="color-input visually-hidden" type="checkbox" value="red" name="color" id="device-color-red" checked>
-                  <label class="color-label" for="device-color-red">Красный</label>
+                  <label class="color-label" for="device-color-red" tabindex="0">Красный</label>
                 </li>
                 <li class="color-filter__list-item">
                   <input class="color-input visually-hidden" type="checkbox" value="pink" name="color" id="device-color-pink">
-                  <label class="color-label" for="device-color-pink">Розовый</label>
+                  <label class="color-label" for="device-color-pink" tabindex="0">Розовый</label>
                 </li>
               </ul>
             </fieldset>
@@ -135,11 +136,11 @@
               <ul class="bluetooth-availability__variants">
                 <li class="bluetooth-availability__variants-value">
                   <input class="bluetooth-availability__input visually-hidden" type="radio" name="bluetooth-availability" id="bluetooth-yes" value="bluetooth-yes" checked>
-                  <label class="bluetooth-availability__label" for="bluetooth-yes">Есть</label>
+                  <label class="bluetooth-availability__label" for="bluetooth-yes" tabindex="0">Есть</label>
                 </li>
                 <li class="bluetooth-availability__variants-value">
                   <input class="bluetooth-availability__input visually-hidden" type="radio" name="bluetooth-availability" id="bluetooth-no" value="bluetooth-no">
-                  <label class="bluetooth-availability__label" for="bluetooth-no">Нет</label>
+                  <label class="bluetooth-availability__label" for="bluetooth-no" tabindex="0">Нет</label>
                 </li>
               </ul>
             </fieldset>
@@ -148,8 +149,8 @@
         </section>
         <section class="products">
           <h2 class="visually-hidden">Товары</h2>
-          <article class="product">
-            <h3 class="product__title">Любительская селфи-палка</h3>
+          <article class="product" tabindex="0">
+            <h3 class="product__title"><a href="#">Любительская селфи-палка</a></h3>
             <img class="product__preview" src="img/catalog/amateur_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
             <p class="product__price">1100 руб.</p>
             <div class="product__controls">
@@ -157,8 +158,8 @@
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
             </div>
           </article>
-          <article class="product">
-            <h3 class="product__title">Профессиональная<br> селфи-палка </h3>
+          <article class="product" tabindex="0">
+            <h3 class="product__title"><a href="#">Профессиональная<br> селфи-палка</a></h3>
             <img class="product__preview" src="img/catalog/professional_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
             <p class="product__price">1500 руб.</p>
             <div class="product__controls">
@@ -166,8 +167,8 @@
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
             </div>
           </article>
-          <article class="product">
-            <h3 class="product__title">Непотопляемая<br> селфи-палка</h3>
+          <article class="product" tabindex="0">
+            <h3 class="product__title"><a href="#">Непотопляемая<br> селфи-палка</a></h3>
             <img class="product__preview" src="img/catalog/unsinkable_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
             <p class="product__price">1500 руб.</p>
             <div class="product__controls">
@@ -175,8 +176,8 @@
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
             </div>
           </article>
-          <article class="product">
-            <h3 class="product__title">Селфи-палка «Следуй за<br> мной»</h3>
+          <article class="product product__new" tabindex="0">
+            <h3 class="product__title"><a href="#">Селфи-палка «Следуй за<br> мной»</a></h3>
             <img class="product__preview" src="img/catalog/followme_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
             <p class="product__price">1900 руб.</p>
             <div class="product__controls">
@@ -221,7 +222,7 @@
           </ul>
         </div>
         <div class="main-footer__right-section">
-          <ul class="user-controls footer__user-controls authorized">
+          <ul class="user-controls footer__user-controls">
             <li class="user-controls__item">
               <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
             </li>

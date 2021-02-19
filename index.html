@@ -9,6 +9,7 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.min.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
   </head>
   <body class="page-body">
     <header class="main-header wrapper">
@@ -20,13 +21,13 @@
           <ul class="navigation-list">
             <li class="navigation-list__item">
               <a class="navigation-catalog__title" href="#" tabindex="0">Каталог товаров</a>
-                <ul class="navigation-catalog" tabindex="0">
-                  <li class="navigation-catalog__item"><a href="#">Виртуальная реальность</a></li>
-                  <li class="navigation-catalog__item"><a href="catalog.html">Моноподы для селфи</a></li>
-                  <li class="navigation-catalog__item"><a href="#">Экшн-камеры</a></li>
-                  <li class="navigation-catalog__item"><a href="#">Фитнес-браслеты</a></li>
-                  <li class="navigation-catalog__item"><a href="#">Умные часы</a></li>
-                  <li class="navigation-catalog__item"><a href="#">Квадрокоптер</a></li>
+                <ul class="navigation-catalog">
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Виртуальная реальность</a></li>
+                  <li class="navigation-catalog__item"><a href="catalog.html" class="navigation-catalog__link">Моноподы для селфи</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Экшн-камеры</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Фитнес-браслеты</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Умные часы</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Квадрокоптер</a></li>
                 </ul>
             </li>
             <li class="navigation-list__item"><a href="#">Доставка</a></li>
@@ -36,17 +37,17 @@
         </nav>
         <ul class="user-controls">
           <li class="user-controls__item">
-            <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
+            <a class="user-controls__link user-controls__sign-in" href="#" aria-label="Войти в личный профиль">Войти</a>
           </li>
           <li class="user-controls__item account-management">
             <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
-            <a class="user-controls__exit" href="#">Выйти</a>
+            <a class="user-controls__exit" href="#" aria-label="Выйти из личного профиля">Выйти</a>
           </li>
           <li class="user-controls__item">
-            <a class="user-controls__link user-controls__compare" href="#">Сравнить</a>
+            <a class="user-controls__link user-controls__compare" href="#" aria-label="Сравнить товары">Сравнить</a>
           </li>
           <li class="user-controls__item">
-            <a class="user-controls__link user-controls__basket" href="#">Корзина</a>
+            <a class="user-controls__link user-controls__basket" href="#" aria-label="Перейти в корзину">Корзина</a>
           </li>
         </ul>
         <form class="main-header__search" action="https://echo.htmlacademy.ru/" name="search-form" method="get">
@@ -63,7 +64,7 @@
       <h1 class="visually-hidden">Магазин гаджетов «Device»</h1>
       <section class="promo">
         <h2 class="visually-hidden">Промо блок</h2>
-        <article class="promo-slide slide-current" id="first-slide">
+        <article class="promo-slide" id="first-slide">
           <h3 class="visually-hidden">Восьмиметровая палка для селфи</h3>
           <img class="promo-slide__image" src="img/index/selfiestick_long.png" width="384" height="486" alt="«Брендовая» селфи-палка черного цвета ">
           <div class="promo-container">
@@ -85,7 +86,7 @@
           </div>
           <span class="promo-slide__count">01</span>
         </article>
-        <article class="promo-slide visually-hidden" id="second-slide">
+        <article class="promo-slide" id="second-slide">
           <h3 class="visually-hidden">Мотивирующие фитнес-браслеты</h3>
           <img class="promo-slide__image" src="img/index/fitness_bracelet.png" width="345" height="485" alt="«Брендовый» фитнес-браслет черного цвета">
           <div class="promo-container">
@@ -103,7 +104,7 @@
           </div>
           <span class="promo-slide__count">02</span>
         </article>
-        <article class="promo-slide visually-hidden" id="third-slide">
+        <article class="promo-slide slide-current" id="third-slide">
           <h3 class="visually-hidden">Квадрокоптер оснащенный лазером</h3>
           <img class="promo-slide__image" src="img/index/quadcopter.png" width="526" height="334" alt="«Брендовый» квадрокоптер белого цвета">
           <div class="promo-container">
@@ -124,9 +125,9 @@
           <span class="promo-slide__count">03</span>
         </article>
         <div class="slider-switches">
-          <button class="slider-switches__item first-switch slider-switches__item-current" id="first-switch"></button>
-          <button class="slider-switches__item second-switch" id="second-switch"></button>
-          <button class="slider-switches__item third-switch" id="third-switch"></button>
+          <button class="slider-switches__item first-switch slider-switches__item-current" id="first-switch" aria-label="Перейти к первому промо слайду"></button>
+          <button class="slider-switches__item second-switch" id="second-switch" aria-label="Перейти ко второму промо слайду"></button>
+          <button class="slider-switches__item third-switch" id="third-switch" aria-label="Перейти к третьему промо слайду"></button>
         </div>
       </section>
       <section class="popular-sections">
@@ -135,31 +136,49 @@
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
               <h3 class="popular-sections__title">Виртуальная<br> реальность</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/vr_icon.svg" width="97" height="55" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="catalog.html">
               <h3 class="popular-sections__title">Моноподы<br> для селфи</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/selfiestick_icon.svg" width="86" height="117" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
               <h3 class="popular-sections__title">Экшн-камеры</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/actionсamera_icon.svg" width="71" height="87" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
               <h3 class="popular-sections__title">Фитнес-браслеты</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/fitnessbracelet_icon.svg" width="107" height="65" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
               <h3 class="popular-sections__title">Умные часы</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/smartwatch_icon.svg" width="56" height="98" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
               <h3 class="popular-sections__title">Квадрокоптеры</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/quadcopter_icon.svg" width="132" height="69" alt="">
+              </div>
             </a>
           </li>
         </ul>
@@ -257,17 +276,17 @@
       <div class="main-footer__right-section">
         <ul class="user-controls footer__user-controls">
           <li class="user-controls__item">
-            <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
+            <a class="user-controls__link user-controls__sign-in" href="#" aria-label="Войти в личный профиль">Войти</a>
           </li>
           <li class="user-controls__item account-management">
             <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
-            <a class="user-controls__exit" href="#">Выйти</a>
+            <a class="user-controls__exit" href="#" aria-label="Выйти из личного профиля">Выйти</a>
           </li>
           <li class="user-controls__item">
-            <a class="user-controls__link user-controls__compare" href="#">Сравнить</a>
+            <a class="user-controls__link user-controls__compare" href="#" aria-label="Сравнить товары">Сравнить</a>
           </li>
           <li class="user-controls__item">
-            <a class="user-controls__link user-controls__basket" href="#">Корзина</a>
+            <a class="user-controls__link user-controls__basket" href="#" aria-label="Перейти в корзину">Корзина</a>
           </li>
         </ul>
         <a class="contact-phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
