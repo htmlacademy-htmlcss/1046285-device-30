@@ -8,7 +8,8 @@
     <link rel="apple-touch-icon" href="img/favicons/logo_device@apple.png">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
   </head>
   <body class="page-body">
     <header class="main-header wrapper">
@@ -19,14 +20,14 @@
         <nav class="main-header__navigation">
           <ul class="navigation-list">
             <li class="navigation-list__item">
-              <a class="navigation-catalog__title" href="#">Каталог товаров</a>
+              <a class="navigation-catalog__title" href="#" tabindex="0">Каталог товаров</a>
                 <ul class="navigation-catalog">
-                  <li class="navigation-catalog__item"><a href="#">Виртуальная реальность</a></li>
-                  <li class="navigation-catalog__item"><a href="catalog.html">Моноподы для селфи</a></li>
-                  <li class="navigation-catalog__item"><a href="#">Экшн-камеры</a></li>
-                  <li class="navigation-catalog__item"><a href="#">Фитнес-браслеты</a></li>
-                  <li class="navigation-catalog__item"><a href="#">Умные часы</a></li>
-                  <li class="navigation-catalog__item"><a href="#">Квадрокоптер</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Виртуальная реальность</a></li>
+                  <li class="navigation-catalog__item"><a href="catalog.html" class="navigation-catalog__link">Моноподы для селфи</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Экшн-камеры</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Фитнес-браслеты</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Умные часы</a></li>
+                  <li class="navigation-catalog__item"><a href="#" class="navigation-catalog__link">Квадрокоптер</a></li>
                 </ul>
             </li>
             <li class="navigation-list__item"><a href="#">Доставка</a></li>
@@ -34,21 +35,25 @@
             <li class="navigation-list__item"><a href="#">Контакты</a></li>
           </ul>
         </nav>
-          <ul class="user-controls">
-            <li class="user-controls__item">
-              <a href="#">Войти</a>
-            </li>
-            <li class="user-controls__item">
-              <a href="#">Сравнить</a>
-            </li>
-            <li class="user-controls__item">
-              <a href="#">Корзина</a>
-            </li>
-          </ul>
-        <form class="main-header__search" action="" name="search-form" method="get">
+        <ul class="user-controls">
+          <li class="user-controls__item">
+            <a class="user-controls__link user-controls__sign-in" href="#" aria-label="Войти в личный профиль">Войти</a>
+          </li>
+          <li class="user-controls__item account-management">
+            <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
+            <a class="user-controls__exit" href="#" aria-label="Выйти из личного профиля">Выйти</a>
+          </li>
+          <li class="user-controls__item">
+            <a class="user-controls__link user-controls__compare" href="#" aria-label="Сравнить товары">Сравнить</a>
+          </li>
+          <li class="user-controls__item">
+            <a class="user-controls__link user-controls__basket" href="#" aria-label="Перейти в корзину">Корзина</a>
+          </li>
+        </ul>
+        <form class="main-header__search" action="https://echo.htmlacademy.ru/" name="search-form" method="get">
           <label  class="main-header__search-icon" for="search"></label>
           <input class="main-header__search-input" type="search" name="site-search" id="search" placeholder="Поиск по сайту">
-          <div class="container">
+          <div class="main-header__search-container">
             <input class="main-header__search-button" type="submit" name="search-button" id="search-button" value="Найти">
           </div>
         </form>
@@ -59,11 +64,6 @@
       <h1 class="visually-hidden">Магазин гаджетов «Device»</h1>
       <section class="promo">
         <h2 class="visually-hidden">Промо блок</h2>
-        <div class="slider-switches">
-          <button class="slider-switches__item first-switch slide-shown" id="first-switch"></button>
-          <button class="slider-switches__item second-switch" id="second-switch"></button>
-          <button class="slider-switches__item third-switch" id="third-switch"></button>
-        </div>
         <article class="promo-slide" id="first-slide">
           <h3 class="visually-hidden">Восьмиметровая палка для селфи</h3>
           <img class="promo-slide__image" src="img/index/selfiestick_long.png" width="384" height="486" alt="«Брендовая» селфи-палка черного цвета ">
@@ -86,7 +86,7 @@
           </div>
           <span class="promo-slide__count">01</span>
         </article>
-        <article class="promo-slide visually-hidden" id="second-slide">
+        <article class="promo-slide" id="second-slide">
           <h3 class="visually-hidden">Мотивирующие фитнес-браслеты</h3>
           <img class="promo-slide__image" src="img/index/fitness_bracelet.png" width="345" height="485" alt="«Брендовый» фитнес-браслет черного цвета">
           <div class="promo-container">
@@ -104,7 +104,7 @@
           </div>
           <span class="promo-slide__count">02</span>
         </article>
-        <article class="promo-slide visually-hidden" id="third-slide">
+        <article class="promo-slide slide-current" id="third-slide">
           <h3 class="visually-hidden">Квадрокоптер оснащенный лазером</h3>
           <img class="promo-slide__image" src="img/index/quadcopter.png" width="526" height="334" alt="«Брендовый» квадрокоптер белого цвета">
           <div class="promo-container">
@@ -124,65 +124,88 @@
           </div>
           <span class="promo-slide__count">03</span>
         </article>
+        <div class="slider-switches">
+          <button class="slider-switches__item first-switch slider-switches__item-current" id="first-switch" aria-label="Перейти к первому промо слайду"></button>
+          <button class="slider-switches__item second-switch" id="second-switch" aria-label="Перейти ко второму промо слайду"></button>
+          <button class="slider-switches__item third-switch" id="third-switch" aria-label="Перейти к третьему промо слайду"></button>
+        </div>
       </section>
       <section class="popular-sections">
         <h2 class="visually-hidden">Популярные разделы каталога</h2>
         <ul class="popular-sections__list">
           <li class="popular-sections__list-item">
-            <a class="popular-sections__link"2 href="#">
-              <h3>Виртуальная<br> реальность</h3>
+            <a class="popular-sections__link" href="#">
+              <h3 class="popular-sections__title">Виртуальная<br> реальность</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/vr_icon.svg" width="97" height="55" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="catalog.html">
-              <h3>Моноподы<br> для селфи</h3>
+              <h3 class="popular-sections__title">Моноподы<br> для селфи</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/selfiestick_icon.svg" width="86" height="117" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
-              <h3>Экшн-камеры</h3>
+              <h3 class="popular-sections__title">Экшн-камеры</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/actionсamera_icon.svg" width="71" height="87" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
-              <h3>Фитнес-браслеты</h3>
+              <h3 class="popular-sections__title">Фитнес-браслеты</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/fitnessbracelet_icon.svg" width="107" height="65" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
-              <h3>Умные часы</h3>
+              <h3 class="popular-sections__title">Умные часы</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/smartwatch_icon.svg" width="56" height="98" alt="">
+              </div>
             </a>
           </li>
           <li class="popular-sections__list-item">
             <a class="popular-sections__link" href="#">
-              <h3>Квадрокоптеры</h3>
+              <h3 class="popular-sections__title">Квадрокоптеры</h3>
+              <div class="popular-sections__icon-container">
+                <img class="popular-sections__icon" src="./img/icons/quadcopter_icon.svg" width="132" height="69" alt="">
+              </div>
             </a>
           </li>
         </ul>
       </section>
     </div>
-      <section class="services">
-        <div class="wrapper services__wrapper">
-          <h2 class="visually-hidden">Сервисы</h2>
-          <div class="services-switches">
-            <button class="services-switches__item button first-services-switch switch-anabled" id="first-services-switch">Доставка</button>
-            <button class="services-switches__item button second-services-switch" id="second-services-switch">Гарантия</button>
-            <button class="services-switches__item button third-services-switch" id="third-services-switch">Кредит</button>
-          </div>
-          <section class="services__description services__delivery description-shown">
-            <h3 class="services__description-title">Доставка</h3>
-            <p class="services__description-text">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
-          </section>
-          <section class="services__description services__warranty">
-            <h3 class="services__description-title">Гарантия</h3>
-            <p class="services__description-text">Если из-за возгорания купленного у нас товара у вас сгорит дом —<br> не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
-          </section>
-          <section class="services__description services__credit">
-            <h3 class="services__description-title">Кредит</h3>
-            <p class="services__description-text">Залезть в долговую яму стало проще! Кредитные консультанты<br> подберут для вас наиболее выгодные<br> условия кредита. Выгодные для нашего банка, разумеется.</p>
-          </section>
-      </section>
-    </div>
+    <section class="services">
+      <div class="wrapper services__wrapper">
+        <h2 class="visually-hidden">Сервисы</h2>
+        <div class="services-switches">
+          <button class="services-switches__item button first-services-switch switch-anabled" id="first-services-switch">Доставка</button>
+          <button class="services-switches__item button second-services-switch" id="second-services-switch">Гарантия</button>
+          <button class="services-switches__item button third-services-switch" id="third-services-switch">Кредит</button>
+        </div>
+        <section class="services__description services__delivery description-shown">
+          <h3 class="services__description-title">Доставка</h3>
+          <p class="services__description-text">Мы с удовольствием доставим ваш товар прямо к вашему<br> подъезду совершенно бесплатно! Ведь мы неплохо<br> заработаем, поднимая его на ваш этаж.</p>
+        </section>
+        <section class="services__description services__warranty">
+          <h3 class="services__description-title">Гарантия</h3>
+          <p class="services__description-text">Если из-за возгорания купленного у нас товара у вас сгорит дом —<br> не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
+        </section>
+        <section class="services__description services__credit">
+          <h3 class="services__description-title">Кредит</h3>
+          <p class="services__description-text">Залезть в долговую яму стало проще! Кредитные консультанты<br> подберут для вас наиболее выгодные<br> условия кредита. Выгодные для нашего банка, разумеется.</p>
+        </section>
+      </div>
+    </section>
     <div class="wrapper">
       <section class="brands">
         <h2 class="visually-hidden">Бренды представленные в нашем магазине</h2>
@@ -217,7 +240,7 @@
       <section class="contacts">
         <h2 class="contacts__title">Контакты</h2>
         <p class="contacts__text">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете<br> проверить работоспособность покупки. Всякое бывает.</p>
-        <a href="#">
+        <a href="https://goo.gl/maps/9YykxsDJVCm5Rc7s8">
           <img class="contacts__map" src="img/index/map.png" width="560" height="222" alt="г.Москва ул.Строителей д.15">
         </a>
         <a class="contacts__button button" href="#">Напишите нам</a>
@@ -251,15 +274,19 @@
         </ul>
       </div>
       <div class="main-footer__right-section">
-        <ul class="footer__user-controls user-controls">
+        <ul class="user-controls footer__user-controls">
           <li class="user-controls__item">
-            <a href="#">Войти</a>
+            <a class="user-controls__link user-controls__sign-in" href="#" aria-label="Войти в личный профиль">Войти</a>
+          </li>
+          <li class="user-controls__item account-management">
+            <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
+            <a class="user-controls__exit" href="#" aria-label="Выйти из личного профиля">Выйти</a>
           </li>
           <li class="user-controls__item">
-            <a href="#">Сравнить</a>
+            <a class="user-controls__link user-controls__compare" href="#" aria-label="Сравнить товары">Сравнить</a>
           </li>
           <li class="user-controls__item">
-            <a href="#">Корзина</a>
+            <a class="user-controls__link user-controls__basket" href="#" aria-label="Перейти в корзину">Корзина</a>
           </li>
         </ul>
         <a class="contact-phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
@@ -268,9 +295,9 @@
         </a>
       </div>
     </div>
-
     </footer>
-    <div class="feedback modal visually-hidden">
+    <div class="modal feedback">
+      <h2 class="visually-hidden">Напишите нам</h2>
       <form class="feedback__form" name="message-form" action="#" method="post">
         <label class="feedback__input-title" for="name">
           Ваше имя:
@@ -285,8 +312,16 @@
           <textarea class="feedback__input feedback__textarea" name="message" id="message" placeholder="В свободной форме"></textarea>
         </label>
         <button class="feedback__button button" type="submit">Отправить</button>
-        <button class="feedback__close-button" type="button"></button>
+        <button class="feedback__close-button" type="button" aria-label="Закрыть форму обратной связи"></button>
       </form>
     </div>
+    <div class="modal map">
+      <h2 class="visually-hidden">Как до нас добраться</h2>
+      <div class="map__container">
+        <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488780026!2d37.527429316404834!3d55.68703098053581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1613541564691!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <button class="map__close-button" type="button" aria-label="Закрыть карту"></button>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
