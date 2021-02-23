@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.min.css">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
   </head>
-  <body class="page-body  authorized">
+  <body class="page-body authorized">
     <header class="main-header wrapper">
       <div class="wrapper-header">
         <a href="index.html" class="main-header__logo catalog-logo">
@@ -52,7 +52,7 @@
         </ul>
         <form class="main-header__search" action="https://echo.htmlacademy.ru/" name="search-form" method="get">
           <label  class="main-header__search-icon" for="search"></label>
-          <input class="main-header__search-input" type="search" name="site-search" id="search" placeholder="Поиск по сайту">
+          <input class="main-header__search-input" type="text" name="site-search" id="search" placeholder="Поиск по сайту">
           <div class="main-header__search-container">
             <input class="main-header__search-button" type="submit" name="search-button" id="search-button" value="Найти">
           </div>
@@ -96,14 +96,16 @@
           <form class="filter__form" action="https://echo.htmlacademy.ru/" method="get" name="filter-form">
             <fieldset class="range-price">
               <legend class="range-price__title">Стоимость</legend>
-              <div class="range-price__controls-scale">
-                <div class="range-price__controls-bar" style="width: 53%; margin-left: 0%;"></div>
-              </div>
-              <div class="range-price__toggle price-lower" tabindex="0">
-                <p class="value-price">от<span class="value-lower">0</span></p>
-              </div>
-              <div class="range-price__toggle price-higher" tabindex="0">
-                <p class="value-price">до<span class="value-higher">5000</span></p>
+              <div class="range-price__controls">
+                <div class="range-price__controls-scale">
+                  <div class="range-price__controls-bar" style="width: 61%; margin-left: 0%;"></div>
+                </div>
+                <div class="range-price__toggle price-lower" tabindex="0">
+                  <p class="value-price">от<span class="value-lower">0</span></p>
+                </div>
+                <div class="range-price__toggle price-higher" tabindex="0">
+                  <p class="value-price">до<span class="value-higher">5000</span></p>
+                </div>
               </div>
             </fieldset>
             <fieldset class="color-filter">
@@ -152,7 +154,7 @@
           <article class="product" tabindex="0">
             <h3 class="product__title"><a href="#">Любительская селфи-палка</a></h3>
             <img class="product__preview" src="img/catalog/amateur_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
-            <p class="product__price">1100 руб.</p>
+            <p class="product__price">1 100 руб.</p>
             <div class="product__controls">
               <button class="product__busket-button button" type="button">В корзину</button>
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
@@ -161,7 +163,7 @@
           <article class="product" tabindex="0">
             <h3 class="product__title"><a href="#">Профессиональная<br> селфи-палка</a></h3>
             <img class="product__preview" src="img/catalog/professional_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
-            <p class="product__price">1500 руб.</p>
+            <p class="product__price">1 500 руб.</p>
             <div class="product__controls">
               <button class="product__busket-button button" type="button">В корзину</button>
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
@@ -170,7 +172,7 @@
           <article class="product" tabindex="0">
             <h3 class="product__title"><a href="#">Непотопляемая<br> селфи-палка</a></h3>
             <img class="product__preview" src="img/catalog/unsinkable_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
-            <p class="product__price">1500 руб.</p>
+            <p class="product__price">1 500 руб.</p>
             <div class="product__controls">
               <button class="product__busket-button button" type="button">В корзину</button>
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
@@ -179,7 +181,7 @@
           <article class="product product__new" tabindex="0">
             <h3 class="product__title"><a href="#">Селфи-палка «Следуй за<br> мной»</a></h3>
             <img class="product__preview" src="img/catalog/followme_selfiestick.jpg" width="360" height="381" alt="«Бренд» селфи-палка">
-            <p class="product__price">1900 руб.</p>
+            <p class="product__price">1 900 руб.</p>
             <div class="product__controls">
               <button class="product__busket-button button" type="button">В корзину</button>
               <button class="product__compare-button" type="button">Добавить к сравнению</button>
@@ -269,6 +271,7 @@
         <button class="map__close-button" type="button" aria-label="Закрыть карту"></button>
       </div>
     </div>
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/script.min.js"></script>
   </body>
 </html>
