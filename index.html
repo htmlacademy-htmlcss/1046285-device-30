@@ -52,7 +52,7 @@
         </ul>
         <form class="main-header__search" action="https://echo.htmlacademy.ru/" name="search-form" method="get">
           <label  class="main-header__search-icon" for="search"></label>
-          <input class="main-header__search-input" type="search" name="site-search" id="search" placeholder="Поиск по сайту">
+          <input class="main-header__search-input" type="text" name="site-search" id="search" placeholder="Поиск по сайту">
           <div class="main-header__search-container">
             <input class="main-header__search-button" type="submit" name="search-button" id="search-button" value="Найти">
           </div>
@@ -64,7 +64,7 @@
       <h1 class="visually-hidden">Магазин гаджетов «Device»</h1>
       <section class="promo">
         <h2 class="visually-hidden">Промо блок</h2>
-        <article class="promo-slide" id="first-slide">
+        <article class="promo-slide  slide-shown" id="first-slide">
           <h3 class="visually-hidden">Восьмиметровая палка для селфи</h3>
           <img class="promo-slide__image" src="img/index/selfiestick_long.png" width="384" height="486" alt="«Брендовая» селфи-палка черного цвета ">
           <div class="promo-container">
@@ -72,14 +72,14 @@
             <p class="promo-slide__text">Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
             <table class="promo-slide__parameters">
               <tr class="promo-slide__parameters-value">
-                <td>8,5 м</td>
-                <td>5 кг</td>
-                <td>Карбон</td>
+                <td class="promo-slide__parameters-cell">8,5 м</td>
+                <td class="promo-slide__parameters-cell">5 кг</td>
+                <td class="promo-slide__parameters-cell">Карбон</td>
               </tr>
               <tr class="promo-slide__parameters-title">
-                <th>Длина палки</th>
-                <th>Вес палки</th>
-                <th>Материал</th>
+                <th class="promo-slide__parameters-cell">Длина палки</th>
+                <th class="promo-slide__parameters-cell">Вес палки</th>
+                <th class="promo-slide__parameters-cell">Материал</th>
               </tr>
             </table>
             <a class="promo-slide__button button" href="#">Подробнее</a>
@@ -94,30 +94,30 @@
             <p class="promo-slide__text">Мотивирующие фитнес-браслеты помогут найти в себе силы<br> не пропускать занятия и соблюдать диету.</p>
             <table class="promo-slide__parameters">
               <tr class="promo-slide__parameters-value">
-                <td>48 часов</td>
+                <td class="promo-slide__parameters-cell">48 часов</td>
               </tr>
               <tr class="promo-slide__parameters-title">
-                <th>Без подзарядки</th>
+                <th class="promo-slide__parameters-cell">Без подзарядки</th>
               </tr>
             </table>
             <a class="promo-slide__button button" href="#">Подробнее</a>
           </div>
           <span class="promo-slide__count">02</span>
         </article>
-        <article class="promo-slide slide-current" id="third-slide">
+        <article class="promo-slide" id="third-slide">
           <h3 class="visually-hidden">Квадрокоптер оснащенный лазером</h3>
           <img class="promo-slide__image" src="img/index/quadcopter.png" width="526" height="334" alt="«Брендовый» квадрокоптер белого цвета">
           <div class="promo-container">
-            <p class="promo-slide__title">Пархает как бабочка,<br> жалит как пчела!</p>
+            <p class="promo-slide__title">Порхает как бабочка,<br> жалит как пчела!</p>
             <p class="promo-slide__text">Этот обычный, на первый взгляд, квадрокоптер оснащен<br> мощным лазером, замаскированным под стандартную камеру.</p>
             <table class="promo-slide__parameters">
               <tr class="promo-slide__parameters-value">
-                <td>800 м</td>
-                <td>50 м</td>
+                <td class="promo-slide__parameters-cell">800 м</td>
+                <td class="promo-slide__parameters-cell">50 м</td>
               </tr>
               <tr class="promo-slide__parameters-title">
-                <th>Дальность полета</th>
-                <th>Радиус поражения</th>
+                <th class="promo-slide__parameters-cell">Дальность полета</th>
+                <th class="promo-slide__parameters-cell">Радиус поражения</th>
               </tr>
             </table>
             <a class="promo-slide__button button" href="#">Подробнее</a>
@@ -125,9 +125,9 @@
           <span class="promo-slide__count">03</span>
         </article>
         <div class="slider-switches">
-          <button class="slider-switches__item first-switch slider-switches__item-current" id="first-switch" aria-label="Перейти к первому промо слайду"></button>
-          <button class="slider-switches__item second-switch" id="second-switch" aria-label="Перейти ко второму промо слайду"></button>
-          <button class="slider-switches__item third-switch" id="third-switch" aria-label="Перейти к третьему промо слайду"></button>
+          <button class="slider-switches__item slider-switches__item-current" id="first-switch" tabindex="0" aria-label="Перейти к первому промо слайду"></button>
+          <button class="slider-switches__item" id="second-switch" tabindex="0" aria-label="Перейти ко второму промо слайду"></button>
+          <button class="slider-switches__item" id="third-switch" tabindex="0" aria-label="Перейти к третьему промо слайду"></button>
         </div>
       </section>
       <section class="popular-sections">
@@ -188,9 +188,9 @@
       <div class="wrapper services__wrapper">
         <h2 class="visually-hidden">Сервисы</h2>
         <div class="services-switches">
-          <button class="services-switches__item button first-services-switch switch-anabled" id="first-services-switch">Доставка</button>
-          <button class="services-switches__item button second-services-switch" id="second-services-switch">Гарантия</button>
-          <button class="services-switches__item button third-services-switch" id="third-services-switch">Кредит</button>
+          <button class="services-switches__item button services-switches__switch-anabled" id="first-services-switch">Доставка</button>
+          <button class="services-switches__item button" id="second-services-switch">Гарантия</button>
+          <button class="services-switches__item button" id="third-services-switch">Кредит</button>
         </div>
         <section class="services__description services__delivery description-shown">
           <h3 class="services__description-title">Доставка</h3>
@@ -240,7 +240,7 @@
       <section class="contacts">
         <h2 class="contacts__title">Контакты</h2>
         <p class="contacts__text">Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете<br> проверить работоспособность покупки. Всякое бывает.</p>
-        <a href="https://goo.gl/maps/9YykxsDJVCm5Rc7s8">
+        <a class="contacts__map-link" href="https://goo.gl/maps/9YykxsDJVCm5Rc7s8">
           <img class="contacts__map" src="img/index/map.png" width="560" height="222" alt="г.Москва ул.Строителей д.15">
         </a>
         <a class="contacts__button button" href="#">Напишите нам</a>
@@ -298,7 +298,7 @@
     </footer>
     <div class="modal feedback">
       <h2 class="visually-hidden">Напишите нам</h2>
-      <form class="feedback__form" name="message-form" action="#" method="post">
+      <form class="feedback__form" name="message-form" action="https://echo.htmlacademy.ru/" method="post">
         <label class="feedback__input-title" for="name">
           Ваше имя:
           <input class="feedback__input" type="text" name="name" id="name" placeholder="Имя Фамилия">
@@ -318,10 +318,11 @@
     <div class="modal map">
       <h2 class="visually-hidden">Как до нас добраться</h2>
       <div class="map__container">
-        <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488780026!2d37.527429316404834!3d55.68703098053581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1613541564691!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488780026!2d37.527429316404834!3d55.68703098053581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsIDExOTMxMQ!5e0!3m2!1sru!2sru!4v1613541564691!5m2!1sru!2sru" width="994" height="593" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         <button class="map__close-button" type="button" aria-label="Закрыть карту"></button>
       </div>
     </div>
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/script.min.js"></script>
   </body>
 </html>
