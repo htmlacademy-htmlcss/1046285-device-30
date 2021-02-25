@@ -1,122 +1,188 @@
 const promoSwitches = document.querySelectorAll('.slider-switches__item');
+const promoSlides = document.querySelectorAll('.promo-slide');
 const servicesSwitches = document.querySelectorAll('.services-switches__item');
+const servicesDescription = document.querySelectorAll('.services__description');
+const modals = document.querySelectorAll('.modal');
 const modalMapLink = document.querySelector('.contacts__map-link');
+const modalMap = document.querySelector('.map');
 const modalFeedbackButton = document.querySelector('.contacts__button');
-
+const modalFeedback = document.querySelector('.feedback');
+const modalFeedbackName = document.querySelector('.feedback__input-name');
+const storageFeedbackName = localStorage.getItem('userName');
+const modalFeedbackEmail = document.querySelector('.feedback__input-email');
+const storageFeedbackEmail = localStorage.getItem('userEmail');
+const messageSentPopup = document.querySelector('.message-sent-popup');
 
 //SLIDERS
 
 function removeSwitches (switches, enabledClass) {
-  for (let i = 0; i < switches.length; i++) {
-    switches[i].classList.remove(enabledClass);
-  }
+  switches.forEach(function (switchItem) {
+    switchItem.classList.remove(enabledClass);
+  });
 }
 
 function removeSlides (slides, shownSlideClass) {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove(shownSlideClass);
-  }
+  slides.forEach(function (slide) {
+    slide.classList.remove(shownSlideClass);
+  });
 }
 
-// promo slider
+// Promo slider
 
-for (let i = 0; i < promoSwitches.length; i++) {
-  promoSwitches[i].addEventListener('click', function() {
-    const promoSwitchesEnabledClass = 'slider-switches__item-current';
-    const promoSlides = document.querySelectorAll('.promo-slide');
-    const promoSlidesShownClass = 'slide-shown';
+if (promoSwitches.length) {
+  promoSwitches.forEach(function (promoSwitch, i, promoSwitches) {
 
-    removeSwitches(promoSwitches, promoSwitchesEnabledClass);
-    removeSlides(promoSlides, promoSlidesShownClass);
-    this.classList.add(promoSwitchesEnabledClass);
+    promoSwitch.addEventListener('click', function() {
+      const promoSwitchesEnabledClass = 'slider-switches__item-current';
+      const promoSlidesShownClass = 'slide-shown';
 
-    for (let j = 0; j < promoSlides.length; j++) {
-      if (i === j) {
-        promoSlides[j].classList.add(promoSlidesShownClass)
-      }
-    }
+      removeSwitches(promoSwitches, promoSwitchesEnabledClass);
+      removeSlides(promoSlides, promoSlidesShownClass);
+      this.classList.add(promoSwitchesEnabledClass);
+
+      promoSlides.forEach(function (promoSlide, j, promoSlides) {
+        if (i == j) {
+          promoSlide.classList.add(promoSlidesShownClass);
+        }
+      });
+    });
   });
+
 }
 
 // services slider
 
-for (let i = 0; i < servicesSwitches.length; i++) {
-  servicesSwitches[i].addEventListener('click', function() {
-    const servicesSwitchesEnabledClass = 'services-switches__switch-anabled';
-    const servicesDescription = document.querySelectorAll('.services__description');
-    const servicesDescriptionShownClass = 'description-shown';
+if (servicesSwitches.length) {
+  servicesSwitches.forEach(function (servicesSwitch, i, servicesSwitches) {
+    servicesSwitch.addEventListener('click', function() {
+      const servicesSwitchesEnabledClass = 'services-switches__switch-anabled';
+      const servicesDescriptionShownClass = 'description-shown';
 
-    removeSwitches(servicesSwitches, servicesSwitchesEnabledClass);
-    removeSlides(servicesDescription, servicesDescriptionShownClass);
-    this.classList.add(servicesSwitchesEnabledClass);
+      removeSwitches(servicesSwitches, servicesSwitchesEnabledClass);
+      removeSlides(servicesDescription, servicesDescriptionShownClass);
+      this.classList.add(servicesSwitchesEnabledClass);
 
-    for (let j = 0; j < servicesDescription.length; j++) {
-      if (i === j) {
-        servicesDescription[j].classList.add(servicesDescriptionShownClass)
-      }
-    }
+      servicesDescription.forEach(function (descriptionCard, j, servicesDescription) {
+        if (i === j) {
+          descriptionCard.classList.add(servicesDescriptionShownClass)
+        }
+      });
+    });
   });
 }
 
 // MODALS
 
+function escListener(elem) {
+    window.addEventListener('keydown', function (evt) {
+      if (evt.keyCode === 27) {
+        if (elem.classList.contains('modal-shown')) {
+          elem.classList.remove('modal-shown');
+        }
+      }
+    });
+}
+
 // modal map
 
-modalMapLink.addEventListener('click', function (evt) {
-  evt.preventDefault();
-  const map = document.querySelector('.map');
-  const mapClose = document.querySelector('.map__close-button');
-  map.classList.add('modal-shown');
+if (modalMapLink) {
 
-  mapClose.addEventListener('click', function () {
-    map.classList.remove('modal-shown');
-  });
+  modalMapLink.addEventListener('click', function (evt) {
+    const modalMapClose = modalMap.querySelector('.map__close-button');
+    evt.preventDefault();
+    escListener(modalMap);
+    modalMap.classList.add('modal-shown');
 
-  window.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === 27) {
-      if (map.classList.contains('modal-shown')) {
-        map.classList.remove('modal-shown');
-      }
-    }
+    modalMapClose.addEventListener('click', function () {
+      modalMap.classList.remove('modal-shown');
+    });
+
   });
-});
+}
 
 // modal feedback
 
-modalFeedbackButton.addEventListener('click', function (evt) {
-  evt.preventDefault();
+if (modalFeedbackButton) {
+  modalFeedbackButton.addEventListener('click', function (evt) {
 
-  const feedback = document.querySelector('.feedback');
-  const feedbackClose = feedback.querySelector('.feedback__close-button');
-  const name = feedback.querySelector('[name=name]')
-  const feedbackForm = feedback.querySelector('.feedback__form')
-  const feedbackInputs = feedback.querySelectorAll('.feedback__input')
-  const invalidError = 'feedback__invalid';
+    const modalFeedbackClose = modalFeedback.querySelector('.feedback__close-button');
+    const name = modalFeedback.querySelector('[name=name]')
+    const modalFeedbackForm = modalFeedback.querySelector('.feedback__form')
+    const modalFeedbackInputs = modalFeedback.querySelectorAll('.feedback__input')
+    const invalidError = 'feedback__invalid';
 
-  feedback.classList.add('modal-shown');
-  name.focus();
+    evt.preventDefault();
+    escListener(modalFeedback);
+    modalFeedbackEmail.value = storageFeedbackEmail;
+    modalFeedbackName.value = storageFeedbackName;
 
-  feedbackForm.addEventListener('submit', function (evt) {
-    for (let i = 0; i < feedbackInputs.length; i++) {
-      if (!feedbackInputs[i].value) {
+    modalFeedbackInputs.forEach (function (modalFeedbackInput) {
+      modalFeedbackInput.removeAttribute('required')
+    });
+
+    console.log(storageFeedbackEmail);
+    console.log(storageFeedbackName);
+
+    modalFeedback.classList.add('modal-shown');
+    name.focus();
+
+    function formValidate() {
+      let invalidCount = 0;
+
+      modalFeedbackInputs.forEach (function (modalFeedbackInput) {
+        if (!modalFeedbackInput.value) {
+          modalFeedbackInput.classList.add(invalidError);
+          setTimeout(function() {
+            modalFeedbackInput.classList.remove(invalidError);
+          }, 800);
+          invalidCount++;
+        }
+      });
+
+      if (invalidCount > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    modalFeedbackForm.onsubmit = function(evt) {
+      localStorage.setItem('userName', modalFeedbackName.value);
+      localStorage.setItem('userEmail', modalFeedbackEmail.value);
+
+      if (!formValidate()) {
         evt.preventDefault();
-        feedbackInputs[i].classList.add(invalidError);
-        setTimeout(function () {
-          feedbackInputs[i].classList.remove(invalidError);
-        }, 800)
-      }
-    }
-  });
+      } else if (window.FormData) {
+          evt.preventDefault();
 
-  feedbackClose.addEventListener('click', function () {
-    feedback.classList.remove('modal-shown');
-  });
+          let data = new FormData(modalFeedbackForm);
+          let xhr = new XMLHttpRequest();
+          let url = modalFeedbackForm.getAttribute('action') + '?time=' + (new Date()).getTime();
 
-  window.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === 27) {
-      if (feedback.classList.contains('modal-shown')) {
-        feedback.classList.remove('modal-shown');
-      }
+          xhr.open('post', url);
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              // server response: xhr.responseText
+            }
+          };
+          xhr.send(data);
+
+
+
+          modalFeedback.classList.remove('modal-shown');
+          messageSentPopup.classList.add('modal-shown');
+          setTimeout(function() {
+            messageSentPopup.classList.remove('modal-shown');
+          }, 1100);
+
+          modalFeedbackInputs.forEach (function(modalFeedbackInput) {
+            modalFeedbackInput.value = '';
+          });
+        }
     }
+
+    modalFeedbackClose.addEventListener('click', function () {
+      modalFeedback.classList.remove('modal-shown');
+    });
   });
-});
+}

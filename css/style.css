@@ -208,6 +208,7 @@ a {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
+  width: min-content;
   margin-bottom: 10px;
   padding-left: 60px;
 }
@@ -345,22 +346,10 @@ a {
   margin-bottom: 60px;
 }
 
-.navigation-catalog__link:focus {
-  height: 164px;
-  opacity: 1;
-  color: var(--basic-accent-color);
-}
-
-.navigation-catalog:hover {
-  overflow: initial;
-  height: 164px;
-  opacity: 1;
-  color: var(--basic-accent-color);
-}
-
+.navigation-catalog__link:focus,
+.navigation-catalog:hover,
 .navigation-catalog:focus-within {
-  overflow: initial;
-  height: 164px;
+  height: 165px;
   opacity: 1;
   color: var(--basic-accent-color);
 }
@@ -368,7 +357,7 @@ a {
 .navigation-catalog__title:hover ~ .navigation-catalog,
 .navigation-catalog__title:focus ~ .navigation-catalog {
   overflow: initial;
-  height: 164px;
+  height: 165px;
   opacity: 1;
   color: var(--basic-accent-color);
 }
@@ -474,6 +463,11 @@ a {
           order: 1;
 }
 
+.main-header__search:focus-within .main-header__search-container {
+  visibility: visible;
+  opacity: 1;
+}
+
 .main-header__search-container {
   visibility: hidden;
   opacity: 0;
@@ -512,11 +506,6 @@ a {
 .main-header__search-input::-ms-clear {
   width: 0;
   height: 0;
-}
-
-.main-header__search-input:focus ~ .main-header__search-container {
-  visibility: visible;
-  opacity: 1;
 }
 
 .main-header__search-input::-webkit-input-placeholder {
@@ -585,6 +574,8 @@ a {
   background: transparent;
   border: 2px solid black;
   border-bottom: 0;
+  cursor: pointer;
+
 
   font-family: "Open Sans", "Arial", sans-serif;
   font-style: normal;
@@ -593,8 +584,6 @@ a {
   line-height: 20px;
   text-transform: uppercase;
 }
-
-
 
 /*----MAIN----*/
 
@@ -1174,10 +1163,6 @@ a {
   display: block;
 }
 
-.contacts__map {
-  margin-bottom: 65px;
-}
-
 .contacts__button {
   position: absolute;
   left: 0;
@@ -1649,6 +1634,13 @@ a {
 }
 
 .color-filter__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -1659,8 +1651,25 @@ a {
   margin: 0 0 19px 41px;
 }
 
+.color-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 .color-label {
+  padding: 1px;
+  border: 2px solid transparent;
   cursor: pointer;
+}
+
+.color-input:focus ~ .color-label {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-color: var(--basic-accent-color);
+  border-radius: 5px;
 }
 
 .color-label::before {
@@ -1723,6 +1732,14 @@ a {
 .bluetooth-availability__variants-value {
   position: relative;
   margin: 0 0 20px 40px;
+}
+
+.bluetooth-availability__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 .bluetooth-availability__label {
@@ -2322,7 +2339,6 @@ a {
   -webkit-box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.15);
   background: var(--opposite-accent-color);
-  /* z-index: 10; */
 }
 
 .feedback__input-title {
@@ -2400,9 +2416,7 @@ a {
 .feedback__input:invalid {
   background: var(--input-invalid-color);
 }
-.feedback__input:valid {
-  background: var(--input-color);
-}
+
 .feedback__invalid {
   -webkit-animation-name: invalid-value;
           animation-name: invalid-value;
@@ -2464,6 +2478,56 @@ a {
 }
 
 .feedback__close-button:active {
+  opacity: 0.3;
+}
+
+/*----message sent popup----*/
+
+.message-sent-popup__container {
+  position: relative;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 200px;
+  margin: auto;
+
+  background-color: var(--opposite-accent-color);
+  -webkit-box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.15);
+
+  font-family: "Gilroy", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+/* .message-sent-popup__text {
+  display: block;
+} */
+
+.message-sent-popup__close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background: url(../img/icons/close-button_icon.svg) no-repeat center var(--primary-color-scheme);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.message-sent-popup__close-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.message-sent-popup__close-button:active {
   opacity: 0.3;
 }
 
