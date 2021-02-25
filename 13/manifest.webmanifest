@@ -1,0 +1,6 @@
+{
+  "icons": [
+    { "src": "img/logo_device@192x192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "img/logo_svg@512x512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
