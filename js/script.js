@@ -40,11 +40,7 @@ if (promoSwitches.length) {
       removeSlides(promoSlides, promoSlidesShownClass);
       this.classList.add(promoSwitchesEnabledClass);
 
-      promoSlides.forEach(function (promoSlide, j, promoSlides) {
-        if (i == j) {
-          promoSlide.classList.add(promoSlidesShownClass);
-        }
-      });
+      promoSlides[i].classList.add(promoSlidesShownClass);
     });
   });
 
@@ -107,6 +103,7 @@ if (modalFeedbackButton) {
 
     const modalFeedbackClose = modalFeedback.querySelector('.feedback__close-button');
     const name = modalFeedback.querySelector('[name=name]')
+    const message = modalFeedback.querySelector('[name=message]');
     const modalFeedbackForm = modalFeedback.querySelector('.feedback__form')
     const modalFeedbackInputs = modalFeedback.querySelectorAll('.feedback__input')
     const invalidError = 'feedback__invalid';
@@ -124,7 +121,13 @@ if (modalFeedbackButton) {
     console.log(storageFeedbackName);
 
     modalFeedback.classList.add('modal-shown');
-    name.focus();
+
+    if (!localStorage) {
+      name.focus();
+    } else {
+      message.focus();
+    }
+
 
     function formValidate() {
       let invalidCount = 0;
@@ -141,9 +144,9 @@ if (modalFeedbackButton) {
 
       if (invalidCount > 0) {
         return false;
-      } else {
-        return true;
       }
+
+      return true;
     }
 
     modalFeedbackForm.onsubmit = function(evt) {
