@@ -7,9 +7,10 @@
     <link rel="icon" href="img/favicons/logo_device.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/logo_device@apple.png">
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.min.css">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="css/normalize.min.css">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="page-body authorized">
     <header class="main-header wrapper">
@@ -37,7 +38,7 @@
         </nav>
         <ul class="user-controls">
           <li class="user-controls__item">
-            <a class="user-controls__link user-controls__sign-in" href="#"  >Войти</a>
+            <a class="user-controls__link user-controls__sign-in" href="#">Войти</a>
           </li>
           <li class="user-controls__item account-management">
             <a class="user-controls__link user-controls__name" href="#">Валентин Петухов</a>
@@ -114,24 +115,34 @@
               <legend class="color-filter__title">Цвет</legend>
               <ul class="color-filter__list">
                 <li class="color-filter__list-item">
-                  <input class="color-input" type="checkbox" value="black" name="color" id="device-color-black" checked>
-                  <label class="color-label" for="device-color-black">Чёрный</label>
+                  <label class="color-label" tabindex="0">
+                    Чёрный
+                    <input class="color-input" type="checkbox" value="black" name="color" checked>
+                  </label>
                 </li>
                 <li class="color-filter__list-item">
-                  <input class="color-input" type="checkbox" value="white" name="color" id="device-color-white">
-                  <label class="color-label" for="device-color-white">Белый</label>
+                  <label class="color-label" tabindex="0">
+                    Белый
+                    <input class="color-input" type="checkbox" value="white" name="color">
+                  </label>
                 </li>
                 <li class="color-filter__list-item">
-                  <input class="color-input" type="checkbox" value="blue" name="color" id="device-color-blue" checked>
-                  <label class="color-label" for="device-color-blue">Синий</label>
+                  <label class="color-label" tabindex="0">
+                    Синий
+                    <input class="color-input" type="checkbox" value="blue" name="color" checked>
+                  </label>
                 </li>
                 <li class="color-filter__list-item">
-                  <input class="color-input" type="checkbox" value="red" name="color" id="device-color-red" checked>
-                  <label class="color-label" for="device-color-red">Красный</label>
+                  <label class="color-label" tabindex="0">
+                    Красный
+                    <input class="color-input" type="checkbox" value="red" name="color" checked>
+                  </label>
                 </li>
                 <li class="color-filter__list-item">
-                  <input class="color-input" type="checkbox" value="pink" name="color" id="device-color-pink">
-                  <label class="color-label" for="device-color-pink">Розовый</label>
+                  <label class="color-label" tabindex="0">
+                    Розовый
+                    <input class="color-input" type="checkbox" value="pink" name="color">
+                  </label>
                 </li>
               </ul>
             </fieldset>

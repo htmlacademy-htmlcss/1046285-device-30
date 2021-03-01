@@ -176,7 +176,7 @@ if (modalFeedbackButton) {
           messageSentPopup.classList.add('modal-shown');
           setTimeout(function() {
             messageSentPopup.classList.remove('modal-shown');
-          }, 1100);
+          }, 1400);
 
           modalFeedbackInputs.forEach (function(modalFeedbackInput) {
             modalFeedbackInput.value = '';
